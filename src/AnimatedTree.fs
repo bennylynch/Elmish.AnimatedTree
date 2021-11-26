@@ -41,7 +41,7 @@ let private buildConfig (props: (Keys * obj) list) =
   let config = obj()
   let modified =
     props
-    |> List.distinctBy fst
+    //|> List.distinctBy fst
     |> List.filter (fun (key, _) -> key <> Keys.Children)
   for (key, value) in modified do setProp (unbox key) value config
   config
